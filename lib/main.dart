@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as _env;
+import 'screens/bn.dart';
 
-void main() => runApp(MaterialApp(home: Home(), title: 'LPG Health'));
+void main() async {
+  await  _env.load(fileName: ".env");
+  runApp(MaterialApp(home: BN(), title: 'LPG Health'));
+}
 
