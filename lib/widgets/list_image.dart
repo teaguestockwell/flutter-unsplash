@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:transparent_image/transparent_image.dart';
-import '../service.dart';
+import '../utils/service.dart';
 
 class ListImage extends StatefulWidget {
   final String imgName;

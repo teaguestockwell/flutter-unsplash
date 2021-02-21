@@ -26,8 +26,8 @@ import 'package:http/http.dart';
 
   List<String> getUrls(String body){
     List<String> urlStrings = [];
-    final json = jsonDecode(body);
-    json['results'].forEach((x) => urlStrings.add(x['urls']['small']));
-    print('urls: ' + urlStrings.length.toString());
+      final json = jsonDecode(body);
+      json['results'].forEach((x) => urlStrings.add(x['urls']['small']));
+      print('urls: ' + urlStrings.length.toString());
     return urlStrings;
   }

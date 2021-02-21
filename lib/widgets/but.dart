@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constant.dart';
+import '../utils/constant.dart';
 
 typedef void OnPress();
 

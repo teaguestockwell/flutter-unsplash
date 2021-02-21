@@ -10,12 +10,12 @@ class BN extends StatefulWidget {
 
 class _BNState extends State<BN> with TickerProviderStateMixin {
   final pages = [
-    Container(child: Center(child: Text('Home'))),
+    ListImage('doctor'),
     ListImage('heart'),
-    Container(child: Center(child: Text('Oncology'))),
-    Container(child: Center(child: Text('Wellness'))),
-    Container(child: Center(child: Text('Chiropractic'))),
-    Container(child: Center(child: Text('Emergency'))),
+    ListImage('cancer'),
+    ListImage('exercise'),
+    ListImage('chiropractor'),
+    ListImage('ambulance')
   ];
 
   final titles =[
