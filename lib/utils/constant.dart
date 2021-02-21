@@ -28,3 +28,5 @@ class Snackz{
   fontSize: 16
 );
 }
+
+String apiKey;

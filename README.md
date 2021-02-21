@@ -6,6 +6,8 @@ This is a web app build using Dart, Flutter, and the [Unsplash API](https://unsp
 
 It showcases consuming a REST API using lazy loading and dynamic layout
 
+build command: flutter build web --release --web-renderer canvaskit --dart-define UNSPLASH_ACCESS_KEY=$UNSPLASH_ACCESS_KEY
+
 ![Screen Shot 2021-02-20 at 22 54 27](https://user-images.githubusercontent.com/71202372/108617920-c590f200-73ce-11eb-8af2-bd87b4b34c34.png)
 ![Screen Shot 2021-02-20 at 22 52 37](https://user-images.githubusercontent.com/71202372/108617908-b5791280-73ce-11eb-91ae-27cc6a8a4c69.png)
 ![Screen Shot 2021-02-20 at 22 54 05](https://user-images.githubusercontent.com/71202372/108617917-c033a780-73ce-11eb-8144-dbe2997eb00e.png)

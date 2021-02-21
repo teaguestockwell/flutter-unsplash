@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
+import 'constant.dart';
 
   Future<List<String>> searchImg(String query) async {
     final base = 'https://api.unsplash.com';
@@ -11,7 +11,7 @@ import 'package:http/http.dart';
 
     final res = await get(
       url,
-      headers: {'Authorization': 'Client-ID ${env['UNSPLASH_ACCESS_KEY']}'}
+      headers: {'Authorization': 'Client-ID ${apiKey}'}
     );
 
     print('${res.statusCode}: GET $url');
