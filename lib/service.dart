@@ -1,32 +1,33 @@
-import 'dart:convert' as convert;
-import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
+  Future<List<String>> searchImg(String query) async {
+    final base = 'https://api.unsplash.com';
+    final ep = '/search/photos';
+    final params = '?per_page=100&query=${query}';
+    final url = base + ep + params;
 
+    final res = await get(
+      url,
+      headers: {'Authorization': 'Client-ID ${env['UNSPLASH_ACCESS_KEY']}'}
+    );
 
-class Service {
-  static final String base = 'https://api.unsplash.com';
-  static Future<List<String>> searchImg(String imgName) async {
-    final ep = '${base}/photos?page=1&?query=${imgName}&client_id=${env['UNSPLASH_ACCESS_KEY']}';
-
-    print('fetching data from: ${ep}');
-
-    final res = await http.get(ep);
-
-    print(res.statusCode);
+    print('${res.statusCode}: GET $url');
 
     if(res.statusCode == 200){
-      final List<dynamic> json = convert.jsonDecode(res.body);
-      print(json);
-      final List<String> urls = [];
-      json.forEach((x) => urls.add(x['urls']['small']));
-      print(urls);
-      return urls;
+      // isolate
+      return compute(getUrls, res.body);
     } else{
       return <String>[];
     }
   }
-}
 
-
+  List<String> getUrls(String body){
+    List<String> urlStrings = [];
+    final json = jsonDecode(body);
+    json['results'].forEach((x) => urlStrings.add(x['urls']['small']));
+    print('urls: ' + urlStrings.length.toString());
+    return urlStrings;
+  }

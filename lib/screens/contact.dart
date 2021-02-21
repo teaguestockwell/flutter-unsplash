@@ -1,7 +1,8 @@
-import 'package:doctors_website/widgets/but.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/but.dart';
 
 class Contact extends StatefulWidget {
 

@@ -1,8 +1,6 @@
-import 'package:doctors_website/widgets/list_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'cardiology.dart';
+import '../widgets/list_image.dart';
 import 'contact.dart';
 
 class BN extends StatefulWidget {
@@ -13,7 +11,7 @@ class BN extends StatefulWidget {
 class _BNState extends State<BN> with TickerProviderStateMixin {
   final pages = [
     Container(child: Center(child: Text('Home'))),
-    ListImage('humanheart'),
+    ListImage('heart'),
     Container(child: Center(child: Text('Oncology'))),
     Container(child: Center(child: Text('Wellness'))),
     Container(child: Center(child: Text('Chiropractic'))),
